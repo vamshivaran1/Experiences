@@ -1,0 +1,52 @@
+1589466922136 : usr             user_login: [1.4.4.12_ec3d033 1010404012] vid="be7cea" account="AgoraID_76394067" token="1:be7c" uid=0 deviceID="" 
+1589466922145 : [ net  ] resolve_hostname : "ulbs.sig.agora.io" 
+1589466922185 : [ net  ] uv_on_getaddrinfo_done2 status: ulbs.sig.agora.io 0
+1589466922190 : dns.            dns_result lbs-sig.agora.io:52.221.229.66
+1589466922194 : [ net  ] uv_udp_init
+1589466922201 : ulbs            bind 0.0.0.0
+1589466922204 : ulbs            send req 52.221.229.66 1 : be7cea4efdd84dbca54205cad439c533
+1589466922263 : ulbs            data recv ok {"web2": [], "web": [["149.129.130.58", 10102], ["149.129.128.106", 10104], ["149.129.128.106", 10106], ["45.40.48.9", 10106], ["45.40.48.108", 10104]], "http": [], "tcp": [["45.40.48.5", 10002], ["149.129.128.106", 10002], ["45.40.48.5", 10000], ["45.40.48.6", 10001], ["149.129.128.106", 10001], ["13.228.40.223", 10003], ["45.40.48.4", 10004], ["45.40.48.6", 10002], ["45.40.48.8", 10003], ["45.40.48.7", 10002]]}
+1589466922270 : ulbs            result  {"web2": [], "web": [["149.129.130.58", 10102], ["149.129.128.106", 10104], ["149.129.128.106", 10106], ["45.40.48.9", 10106], [
+1589466922278 : tcp.1.0         connecting 45.40.48.5:10002
+1589466922285 : [ net  ] connect to 45.40.48.5
+1589466922291 : tcp.1.1         connecting 45.40.48.6:10002
+1589466922297 : [ net  ] connect to 45.40.48.6
+1589466922339 : tcp.1.0         connected 45.40.48.5:10002 0
+1589466922351 : tcp.1           send : [0 211] login {"account":"AgoraID_76394067","device":"","ip":"","token":"1:be7cea4efdd84dbca54205cad439c533:
+1589466922354 : tcp.1.1         connected 45.40.48.6:10002 0
+1589466922361 : tcp.1.1         close on connected : work end 1 
+1589466922404 : tcp.1.0         recv : [185, 0] login_res ok 2 {"result":"ok","config_call_timeout":60000,"config_call_retry_time":10000,"line":"be7
+1589466922411 : tcp.1           send : [1 22] line_ping:1
+1589466922417 : usr.cb          onLoginSuccess 341180362 0
+1589466922435 : new rpt udp
+1589466922439 : [ net  ] uv_udp_init
+1589466922446 : call_api 0 1 user_getmsg 0
+1589466922450 : tcp_call 1 user_getmsg {"line":"be7cea4efdd84dbca54205cad439c533:AgoraID_76394067","max":30,"ver_clear":0}
+1589466922453 : tcp.1           send : [1 107] call user_getmsg 1 0 {"line":"be7cea4efdd84dbca54205cad439c533:AgoraID_76394067","max":30,"ver_clear
+1589466922463 : tcp.1.0         recv : [11, 0] line_pong:1
+1589466922509 : tcp.1.0         recv : [64, 0] call_ret user_getmsg 1 0 {"result":"ok","ver_clear":1,"msgs":[]}
+1589466922516 : call_ret 1 0  {"msgs":[],"result":"ok","ver_clear":1} 
+1589466923138 : [ net  ] resolve_hostname : "rp.sig.agora.io" 
+1589466923227 : [ net  ] uv_on_getaddrinfo_done2 status: rp.sig.agora.io 0
+1589466923239 : rpt host rp.sig.agora.io 139.196.188.164
+1589466924055 : send rp 0 139.196.188.164
+1589466932854 : tcp.1           send : [1 22] line_ping:2
+1589466932926 : tcp.1.0         recv : [11, 0] line_pong:2
+1589466943367 : tcp.1           send : [1 22] line_ping:3
+1589466943436 : tcp.1.0         recv : [11, 0] line_pong:3
+1589466953878 : tcp.1           send : [1 22] line_ping:4
+1589466953947 : tcp.1.0         recv : [11, 0] line_pong:4
+1589466964387 : tcp.1           send : [1 22] line_ping:5
+1589466964441 : tcp.1.0         recv : [11, 0] line_pong:5
+1589466974904 : tcp.1           send : [1 22] line_ping:6
+1589466974957 : tcp.1.0         recv : [11, 0] line_pong:6
+1589466985415 : tcp.1           send : [1 22] line_ping:7
+1589466985471 : tcp.1.0         recv : [11, 0] line_pong:7
+1589466995932 : tcp.1           send : [1 22] line_ping:8
+1589466996024 : tcp.1.0         recv : [11, 0] line_pong:8
+1589467006450 : tcp.1           send : [1 22] line_ping:9
+1589467006523 : tcp.1.0         recv : [11, 0] line_pong:9
+1589467016964 : tcp.1           send : [1 23] line_ping:10
+1589467017142 : tcp.1.0         recv : [12, 0] line_pong:10
+1589467027502 : tcp.1           send : [1 23] line_ping:11
+1589467027557 : tcp.1.0         recv : [12, 0] line_pong:11
