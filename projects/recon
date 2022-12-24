@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Set the target domain
+domain=example.com
+
+# Use assetfinder to find subdomains
+assetfinder --subs-only $domain > subdomains.txt
+
+# Use subfinder to find additional subdomains
+subfinder -d $domain >> subdomains.txt
+
+# Use amass to find additional subdomains
+amass enum -d $domain >> subdomains.txt
+
+# Remove duplicates and sort the subdomains
+sort subdomains.txt | uniq > subdomains-sorted.txt
+
+# Use httprobe to find live subdomains
+cat subdomains-sorted.txt | httprobe > live-subdomains.txt
+
+# Use aquatone to take screenshots of the live subdomains
+cat live-subdomains.txt | aquatone -out aquatone-screenshots
+
+# Use waybackurls to find URLs in the Wayback Machine
+cat subdomains-sorted.txt | waybackurls > wayback-urls.txt
+
+# Use gau to check for known vulnerabilities
+cat live-subdomains.txt | gau > gau-results.txt
+
+# Use gf to find potential sensitive files
+cat subdomains-sorted.txt | gf > gf-results.txt
+
+# Use gobuster to perform directory bruteforce on the live subdomains
+cat live-subdomains.txt | gobuster -w /usr/share/wordlists/dirb/common.txt -t 20 > gobuster-results.txt
+This script will use the assetfinder, subfinder, amass, httprobe, aquatone, waybackurls, gau, gf, and gobuster tools to perform various tasks such as finding subdomains, taking screenshots of live subdomains, finding URLs in the Wayback Machine, checking for known vulnerabilities, finding potential sensitive files, and performing directory bruteforce.
+
+Note that you will need to install these tools and make sure they are in your PATH before running this script. You can do this by following the instructions on the respective GitHub pages:
+
+Assetfinder: https://github.com/tomnomnom/assetfinder
+Subfinder: https://github.com/projectdiscovery/subfinder
+Amass: https://github.com/OWASP/Amass
+Httprobe: https://github.com/tomnomnom/httprobe
+Aquatone: https://github.com/michenriksen/aquatone
+Waybackurls: https://github.com/tomnomnom/waybackurls
+Gau: https://github.com/lc/gau
+Gf: https://github.com/tomnomnom/gf
+Gobuster: https://github.com/OJ/gobuster
+This script is just a starting point and can be modified and expanded upon based on your specific needs. It is important to note that bug bounty testing is a complex process that requires careful planning and execution, and it is not possible to automate all aspects of it.
